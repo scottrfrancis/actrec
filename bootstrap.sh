@@ -6,6 +6,7 @@
 sudo apt-get update
 # sudo apt-get upgrade -y
 
+sudo apt-get install -y g++
 sudo apt-get install -y nodejs
 sudo apt-get install -y ruby ruby-dev
 sudo apt-get install -y sqlite3 libsqlite3-dev
