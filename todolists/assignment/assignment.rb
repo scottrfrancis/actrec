@@ -10,12 +10,22 @@ class Assignment
       # accept a hash of user properties (`:username` and `:password_digest`) as an input parameter. Note these are 100% same as model class.
       # use the User Model class to create a new user in the DB
       # return an instance of the class with primary key (`id`), and dates (`created_at` and `updated_at`) assigned
+
+    u = User.create(params)
   end
 
   def create_todolist(params)
       # accept a hash of todolist properties (`:name` and `:due_date`) as an input parameter. Note these are not 100% the same as Model class.
       # use the TodoList Model class to create a new user in the DB
       # return an instance of the class with primary key (`id`), and dates (`created_at` and `updated_at`) assigned
+
+    p = {}
+    # TodoList.column_names.each {|k| puts k; p[k] = params[k] if params[k] != nil }
+    p[:list_name] = params[:name]
+    p[:list_due_date] = params[:due_date]
+    puts p
+    
+    t = TodoList.create(p)
   end
 
   #
@@ -25,6 +35,8 @@ class Assignment
       # accept offset and limit input parameters
       # use the User Model class to find all Users, ordered by `updated_at` ascending, with specified row offset and row limit
       # return a collection of User instances that represent the specified rows
+      
+    User.offset(offset).limit(limit).all.order(:updated_at)  
   end
 
   def find_alllists(offset, limit)
