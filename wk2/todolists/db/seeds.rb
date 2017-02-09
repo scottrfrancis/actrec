@@ -26,12 +26,7 @@ TodoList.destroy_all
   u.todo_lists << l
 
   (1..5).each { |i|
-    t = TodoItem.create(due_date: due, title: name[0] + i.to_s, description: "do this")
+    t = TodoItem.create(due_date: due, title: name[0] + i.to_s, description: "do this", completed: false)
     l.todo_items << t
   }
 }
-
-
-
-
-
