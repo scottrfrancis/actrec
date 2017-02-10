@@ -44,3 +44,9 @@ rspec -e rq05
 rails generate model TodoItem due_date:date title:string description:text completed:boolean todo_list:references
 rake db:migrate
 rspec -e rq06
+
+#
+# submission
+#
+cd ..   # that's right.. ignore the directions and go up a level
+zip -r submit.zip todolists/
